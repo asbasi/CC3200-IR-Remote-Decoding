@@ -1,6 +1,8 @@
 # CC3200-IR-Remote-Decoding
 Interfaces the CC3200 LaunchPad to an AT&amp;T infrared (IR) remote control using an IR Receiver module. Can then use the IR remote to transmit messages between boards (via UART) using T-9 style texting.
 
+Uses an Adrafruit OLED Breakout Board - 16-bit Color 1.5" (product id: 1431), Texas Instruments CC3200 LaunchPad (CC3200-LAUNCHXL), and a Vishay TSOP31336 IR receiver module.
+
 Basic Method
 ------------------------------
 To decode the IR signals we used a combination statistical analysis and general quantitative approaches. We started off by capturing the waveforms of all pertinent signals from the various keys that’d be used in the texting (number, arrow, volume, channel, and enter keys) using our Saleae Logic Analyzer. From these waveforms we were able to determine three things: that the signals for the numeric keys and the arrow keys had drastically different lengths, some of the keys had a toggle bit to differentiate between multiple presses, and the keys themselves were being encoded using pulse distance modulation (with approximately 4 different possible widths). To determine the approximate lengths of these pulse widths and the cutoffs for the different possible values we captured multiple instances of each key and plotted them into a histogram. From this histogram we were able to very easily determine the various cutoffs for each of the ranges. For the short processing keys (the numeric keys) the cutoffs were 50,000 ticks, 37500 ticks, and 25000 ticks and for long processing keys (the arrow keys) the cutoff was 90000 ticks. These would then be used in our actual code to decode the signal being processed. 
