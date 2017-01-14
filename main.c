@@ -766,21 +766,21 @@ void main()
     // Adafruit initialize
     Adafruit_Init();
 
-	fillScreen(BLACK);
-	setTextColor(RED,BLACK);
-	setCursor(0, 0); Outstr("Kelvin Lu");
-	setCursor(0, 8); Outstr("Arvinder Basi");
-	setCursor(0, 16); Outstr("EEC 172");
-	setCursor(0, 24); Outstr("Lab 3, 2/9/2016");
-	setCursor(0, 40); Outstr("IR Communication");
-	MAP_UtilsDelay(20000000);
+    fillScreen(BLACK);
+    setTextColor(RED,BLACK);
+    setCursor(0, 0); Outstr("Kelvin Lu");
+    setCursor(0, 8); Outstr("Arvinder Basi");
+    setCursor(0, 16); Outstr("EEC 172");
+    setCursor(0, 24); Outstr("Lab 3, 2/9/2016");
+    setCursor(0, 40); Outstr("IR Communication");
+    MAP_UtilsDelay(20000000);
 
-	fillScreen(BLACK);
-	drawFastHLine(0, 64, 128, WHITE);
-	drawChar(0, 0, '>', RED, BLACK, (unsigned char) 1);
-	drawChar(6, 0, ' ', RED, BLACK, (unsigned char) 1);
-	drawChar(0, 80, '>', BLUE, BLACK, (unsigned char) 1);
-	drawChar(6, 80, ' ', BLUE, BLACK, (unsigned char) 1);
+    fillScreen(BLACK);
+    drawFastHLine(0, 64, 128, WHITE);
+    drawChar(0, 0, '>', RED, BLACK, (unsigned char) 1);
+    drawChar(6, 0, ' ', RED, BLACK, (unsigned char) 1);
+    drawChar(0, 80, '>', BLUE, BLACK, (unsigned char) 1);
+    drawChar(6, 80, ' ', BLUE, BLACK, (unsigned char) 1);
 
     SystickInit();
 
