@@ -43,7 +43,8 @@
 
 #define CONSOLE              		UARTA0_BASE
 #define PAIRDEV              		UARTA1_BASE
-#define PAIRDEV_PERIPH  			PRCM_UARTA1
+#define PAIRDEV_PERIPH  		PRCM_UARTA1
+
 #define UartConsoleGetChar()        MAP_UARTCharGet(CONSOLE)
 #define UartConsolePutChar(c)       MAP_UARTCharPut(CONSOLE,c)
 #define UartPairDevGetChar()        MAP_UARTCharGet(PAIRDEV)
@@ -102,17 +103,17 @@ BoardInit(void)
 //*****************************************************************************
 #define SYSTICK_WRAP_TICKS		16777216 // 2^24
 
-#define SYS_CLK				    80000000
+#define SYS_CLK				80000000
 #define MILLISECONDS_TO_TICKS(ms)   ((SYS_CLK/1000) * (ms))
 #define TICKS_TO_MILLISECONDS(ts)   (((double) 1000/(double) SYS_CLK) * (double) (ts))
 
 
-#define NO_PROCESSING_MODE 		0
+#define NO_PROCESSING_MODE 	0
 #define	SHORT_PROCESSING_MODE 	1
 #define LONG_PROCESSING_MODE 	2
 
-#define EDGE_TYPE_FALLING 		0
-#define EDGE_TYPE_RISING 		1
+#define EDGE_TYPE_FALLING 	0
+#define EDGE_TYPE_RISING 	1
 
 void PhotoresistorIntDisable();
 void EdgeTriggerHandler();
@@ -136,11 +137,11 @@ unsigned int 		g_signalMode 	= NO_PROCESSING_MODE;
 unsigned int 		g_finishMode 	= NO_PROCESSING_MODE;
 unsigned long 		g_ticksLast 	= SYSTICK_WRAP_TICKS;
 unsigned long 		g_ticksElapsed 	= 0UL;
-unsigned long long 	g_bit_rep 		= 0ULL;
+unsigned long long 	g_bit_rep 	= 0ULL;
 unsigned char 		g_last_toggle	= 0;
 unsigned long long 	g_last_bit_rep	= 0ULL;
 unsigned char		g_repeat        = 0;
-unsigned char 		g_send_key		= 0;
+unsigned char 		g_send_key	= 0;
 
 int send_x_cursor = 6;
 int send_y_cursor = 0;
